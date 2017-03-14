@@ -76,14 +76,15 @@ void loop()
           onoff = true;
           delay(1000);
         }else{
-          SetupBlackPalette();
+          colourscheme=0;
+          colourschemecycle(colourscheme);
           onoff = false;
         }
         break;
       
       //colour schemes
       case 16748655: //up arrow - change colour scheme
-        if (colourscheme < colourschemeqty){
+        if (colourscheme < colourschemeqty && colourscheme > 0){
           colourscheme += 1;
         }else if (colourscheme == colourschemeqty){
           colourscheme=1;
@@ -152,6 +153,7 @@ void colourschemecycle(uint8_t currentscheme)
   colourschemeqty = 13;
   switch (currentscheme)
   {
+    case 0: fill_solid( currentPalette, 16, CRGB::Black);   currentBlending = LINEARBLEND;  FillLEDsFromPaletteColors( 1);  break;
     case 1: fill_solid( currentPalette, 16, CRGB::White);   currentBlending = LINEARBLEND;  FillLEDsFromPaletteColors( 1);  break;
     case 2: fill_solid( currentPalette, 16, CRGB::Red);     currentBlending = LINEARBLEND;  FillLEDsFromPaletteColors( 1);  break;
     case 3: fill_solid( currentPalette, 16, CRGB::Green);   currentBlending = LINEARBLEND;  FillLEDsFromPaletteColors( 1);  break;
