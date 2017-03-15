@@ -10,3 +10,6 @@ IR receiver is connected to PWM PIN on the board, with 5v power and ground also 
 
 The WS2812B leds are on PIN 2. Ground and power of the LED strip come directly from the PSU and not from the arduino (it cant power them).
 
+Demo: 
+https://www.youtube.com/watch?v=iTrGdLQKii0
+http://imgur.com/gallery/KRYdV
